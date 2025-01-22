@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div style="height: 100%; width: 100%">
+      <div class="main">
+        <div class="h1">
+          <h1>IP Address Tracker</h1>
+        </div>
+        <div class="search-bar">
+          <div>
+            <input
+              oninput="search()"
+              type="text"
+              placeholder="Search for any IP address or domain"
+              id="text"
+            />
+          </div>
+        </div>
+        <div><p id="errormsg"></p></div>
+      </div>
+
+      <div class="white-blank">
+        <div class="left1-border">
+          <h2>ip address</h2>
+          <p id="ip">192.0.0.0.0.0</p>
+        </div>
+
+        <div class="left-border">
+          <h2>Location</h2>
+          <p id="location">New York</p>
+        </div>
+
+        <div class="left-border">
+          <h2>Timezone</h2>
+          <p id="timezone">uct:+5:00</p>
+        </div>
+
+        <div class="left-border">
+          <h2>isp</h2>
+          <p id="isp">SpaceX<br />Starlink</p>
+        </div>
+      </div>
+
+      <div id="map"></div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
