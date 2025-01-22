@@ -70,7 +70,7 @@ function search() {
             })
             .then((data) => {
               console.log(data);
-              map.setView([data.location.lat, data.location.lng], 13);
+              map.flyTo([data.location.lat, data.location.lng], 13);
               marker = L.marker([data.location.lat, data.location.lng]).addTo(
                 map
               );
@@ -94,7 +94,7 @@ function search() {
             })
             .then((data) => {
               console.log(data);
-              map.setView([data.location.lat, data.location.lng], 13);
+              map.flyTo([data.location.lat, data.location.lng], 13);
               marker = L.marker([data.location.lat, data.location.lng]).addTo(
                 map
               );
