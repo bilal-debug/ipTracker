@@ -10,7 +10,10 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "open-cli": "^8.0.0"
+    "autoprefixer": "^10.4.20",
+    "open-cli": "^8.0.0",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^4.0.0"
   },
   "dependencies": {
     "leaflet": "^1.9.4"

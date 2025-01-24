@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -16,24 +15,117 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div style="height: 100%; width: 100%">
       <div class="main">
-        <div class="h1">
-          <h1>IP Address Tracker</h1>
-        </div>
-        <div class="search-bar">
+        <div class="main-inner">
           <div>
-            <input
-              oninput="search()"
-              type="text"
-              placeholder="Search for any IP address or domain"
-              id="text"
-            />
+            <div class="h1">
+              <h1>IP Address Tracker</h1>
+            </div>
+            <div class="search-bar">
+              <div>
+                <input
+                  oninput="search()"
+                  type="text"
+                  placeholder="Search for any IP address or domain"
+                  id="text"
+                />
+              </div>
+            </div>
+            <div><p id="errormsg"></p></div>
+          </div>
+          <div>
+            <div class="h1">
+              <h1>Technology detection</h1>
+            </div>
+
+            <div class="search-bar">
+              <div>
+                <input
+                  oninput="searchd()"
+                  type="text"
+                  placeholder="Search for any domain"
+                  id="text-d"
+                />
+              </div>
+            </div>
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Results
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <div>
+                        <p
+                          style="
+                            text-transform: uppercase;
+                            color: white;
+                            text-align: center;
+                          "
+                        >
+                          technology stack detection
+                        </p>
+                      </div>
+
+                      <div
+                        style="
+                          display: flex;
+                          align-items: center;
+                          flex-direction: row;
+                        "
+                      >
+                        <div style="width: 20%" id="stack_info"></div>
+                        <div style="width: 80%" id="cmso"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div><p id="errormsg-d"></p></div>
           </div>
         </div>
-        <div><p id="errormsg"></p></div>
       </div>
 
       <div class="white-blank">
@@ -56,9 +148,23 @@
           <h2>isp</h2>
           <p id="isp">SpaceX<br />Starlink</p>
         </div>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          check technology
+        </button>
+        <button type="button" class="btn btn-primary" id="action">
+          Download Data
+        </button>
       </div>
 
       <div id="map"></div>
+
+      <!-- Modal -->
     </div>
   </body>
   <script src="index.js"></script>

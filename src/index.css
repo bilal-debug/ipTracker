@@ -25,6 +25,11 @@ body {
   overflow: visible;
   gap: 20px;
 }
+.main-inner {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 .white-blank {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -63,6 +68,17 @@ input::placeholder {
   border-color: lightgray;
   padding-inline-start: 20px;
   border-width: 1px;
+}
+.modal-content {
+  background-color: #063970;
+}
+
+h3 {
+  color: white;
+  font-size: 14px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding-bottom: 10px;
 }
 h2 {
   color: gray;
@@ -106,6 +122,12 @@ svg {
   }
 }
 #errormsg {
+  color: white;
+  text-decoration: double;
+  text-transform: uppercase;
+  text-align: start;
+}
+#errormsg-d {
   color: white;
   text-decoration: double;
   text-transform: uppercase;
