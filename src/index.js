@@ -252,6 +252,7 @@ function searchd() {
       }
     });
   } else {
-    document.getElementById("errormsg-d").innerText = "please write it proper";
+    document.getElementById("errormsg-d").innerText =
+      "please write correct domain";
   }
 }
