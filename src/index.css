@@ -100,14 +100,20 @@ svg {
 }
 .left1-border {
 }
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 1051px) {
   .white-blank {
     grid-template-columns: none;
     height: 50% !important;
-    width: 70%;
+    width: 80%;
+    margin-top: 70px;
   }
+
   .main {
     justify-content: start;
+  }
+  .main-inner {
+    margin-top: 30px;
+    display: block;
   }
   input {
     width: 300px !important;
